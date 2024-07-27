@@ -9,13 +9,13 @@ import { filterTestSteps, joinArgs, validTestArgs } from './utils';
 
 type TestDetailsViewProps = {
   testStepsData: ITestSteps[];
-  tracePresent: boolean;
+  $tracePresent: boolean;
 };
 
-const TestDetailsView: React.FC<TestDetailsViewProps> = ({ testStepsData, tracePresent }) => {
+const TestDetailsView: React.FC<TestDetailsViewProps> = ({ testStepsData, $tracePresent }) => {
   const [query, setQuery] = useState<string>('');
   const [trace, setTrace] = useState<{ url?: string; snapshotPath?: string } | undefined>();
-  const [activeTestStep, setActiveTestStep] = useState<number>();
+  const [$activeTestStep, set$activeTestStep] = useState<number>();
 
   const filteredTestsSteps = filterTestSteps(testStepsData, query);
 
@@ -44,11 +44,11 @@ const TestDetailsView: React.FC<TestDetailsViewProps> = ({ testStepsData, traceP
                 <PassTestStep
                   key={index}
                   testStepKey={index}
-                  tracePresent={tracePresent}
+                  $tracePresent={$tracePresent}
                   time={test.time}
                   traceData={test.domSnapshot ?? {}}
-                  active={index === activeTestStep && !!test.domSnapshot}
-                  setActiveTestStep={setActiveTestStep}
+                  $active={index === $activeTestStep && !!test.domSnapshot}
+                  set$activeTestStep={set$activeTestStep}
                   setTrace={setTrace}>
                   {`${test.name}${validTestArgs(test.args) ? `('${joinArgs(test.args!)}')` : ''}`}
                 </PassTestStep>
@@ -66,17 +66,17 @@ const TestDetailsView: React.FC<TestDetailsViewProps> = ({ testStepsData, traceP
                   stacktrace={test.stacktrace}
                   screenshot={test.screenshot}
                   traceData={test.domSnapshot ?? {}}
-                  active={index === activeTestStep && !!test.domSnapshot}
-                  setActiveTestStep={setActiveTestStep}
+                  $active={index === $activeTestStep && !!test.domSnapshot}
+                  set$activeTestStep={set$activeTestStep}
                   setTrace={setTrace}
-                  tracePresent={tracePresent}>
+                  $tracePresent={$tracePresent}>
                   {`${test.name}${validTestArgs(test.args) ? `('${joinArgs(test.args!)}')` : ''}`}
                 </ErrorTestStep>
               );
             }
           })}
         </TestSteps>
-        {tracePresent && <Trace url={trace?.url} src={trace?.snapshotPath} />}
+        {$tracePresent && <Trace url={trace?.url} src={trace?.snapshotPath} />}
       </TestStepWrapper>
     </Wrapper>
   );

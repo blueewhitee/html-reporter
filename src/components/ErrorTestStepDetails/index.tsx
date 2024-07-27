@@ -17,12 +17,12 @@ type ErrorStepDetailsProps = {
       codeSnippet: CodeSnippet[];
     };
   };
-  tracePresent?: boolean;
+  $tracePresent?: boolean;
 };
 
 const ErrorTestStepDetails: React.FC<ErrorStepDetailsProps> = ({
   errorDetails: { errorName, shortMessage, stackTrace },
-  tracePresent
+  $tracePresent
 }) => {
   return (
     <Wrapper>
@@ -45,7 +45,7 @@ const ErrorTestStepDetails: React.FC<ErrorStepDetailsProps> = ({
           line_number={stackTrace.error_line_number}
           codeSnippet={stackTrace.codeSnippet}
           file_path={stackTrace.filePath}
-          tracePresent={tracePresent}
+          $tracePresent={$tracePresent}
         />
       )}
     </Wrapper>

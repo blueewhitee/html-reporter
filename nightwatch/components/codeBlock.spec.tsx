@@ -22,7 +22,7 @@ CodeBlockComponent.args = {
     { line: 3, code: '};' }
   ],
   file_path: 'example.js',
-  tracePresent: true
+  $tracePresent: true
 };
 
 CodeBlockComponent.test = async (browser, { component }) => {

@@ -13,7 +13,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, resetErrorBoundary
   return (
     <Wrapper>
       <ErrorAlert role="alert">
-        <Text fontSize={24} lineHight={36}>
+        <Text fontSize={24} $lineHight={36}>
           Something went wrong 🦉
         </Text>
         <ErrorContext style={{ fontFamily: 'monospace' }}>{error.stack}</ErrorContext>

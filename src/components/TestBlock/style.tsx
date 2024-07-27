@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Check, Close, RemoveCircleOutline } from '../../icons/index';
 
 type WrapperProps = {
-  highlight: boolean;
+  $highlight: boolean;
   clickable: boolean;
 };
 
@@ -14,7 +14,7 @@ export const Wrapper = styled.button<WrapperProps>`
   padding: var(--padding-8);
   cursor: ${(props) => (props.clickable ? 'pointer' : 'not-allowed')};
   ${(props) =>
-    props.highlight &&
+    props.$highlight &&
     css`
       background-color: var(--light-color-red-background-10);
     `}
@@ -24,7 +24,7 @@ export const Wrapper = styled.button<WrapperProps>`
 export const Left = styled.div`
   font-size: var(--font-size-16);
   display: inline-flex;
-  flex-shrink: 0;
+  flex-$shrink: 0;
   align-items: baseline;
   margin-top: var(--margin-2);
 `;

@@ -26,7 +26,7 @@ const AccordionItems: React.FC<AccordionItemsProps> = ({ expandedIds, setTabValu
             <TestBlock
               key={test.key}
               status={test.status}
-              highlightBlock={test.key === testId}
+              $highlightBlock={test.key === testId}
               fileKey={file.key}
               testKey={test.key}
               setTestId={setTestId}

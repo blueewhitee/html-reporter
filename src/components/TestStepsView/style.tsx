@@ -8,7 +8,7 @@ export const TabsRoot = styled(Tabs.Root)`
 `;
 
 export const TabsList = styled(Tabs.List)`
-  flex-shrink: 0;
+  flex-$shrink: 0;
   display: flex;
   border-bottom: var(--border-1) solid var(--color-grey-50);
   cursor: pointer;
@@ -25,7 +25,7 @@ export const TabsTrigger = styled(Tabs.Trigger)`
   font-weight: var(--font-weight-semi-light);
   user-select: none;
 
-  &[data-state='active'] {
+  &[data-state='$active'] {
     color: var(--color-primary-60);
     font-weight: var(--font-weight-bold);
     box-shadow: inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor;

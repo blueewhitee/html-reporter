@@ -57,7 +57,7 @@ const TestData: React.FC = () => {
                   : setExpanded([''])
               }
             >
-              <Text color="grey-90" fontSize={12} lineHight={20}>
+              <Text color="grey-90" fontSize={12} $lineHight={20}>
                 Expand all
               </Text>
             </ToggleRoot>

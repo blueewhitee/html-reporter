@@ -6,19 +6,19 @@ type Props = {
   icon: ReactElement;
   children: React.ReactNode;
   title?: string;
-  transformText?: boolean;
+  $transformText?: boolean;
 };
 
-const ChipWithIcon: React.FC<Props> = ({ icon, children, title, transformText }) => {
+const ChipWithIcon: React.FC<Props> = ({ icon, children, title, $transformText }) => {
   return (
     <Wrapper>
       <IconWrapper>{icon}</IconWrapper>
       <Text
         title={title}
         fontSize={12}
-        lineHight={20}
+        $lineHight={20}
         color="grey-100"
-        transformText={transformText}
+        $transformText={$transformText}
       >
         {children}
       </Text>

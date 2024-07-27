@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         <Logo brand="browserstack" />
       </LogoWrapper>
       <TextWrapper>
-        <Text fontSize={14} lineHight={16} color="grey-30">
+        <Text fontSize={14} $lineHight={16} color="grey-30">
           &copy; {`${new Date().getFullYear()} BrowserStack Limited. All rights reserved.`}
         </Text>
       </TextWrapper>

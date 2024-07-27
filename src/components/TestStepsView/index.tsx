@@ -26,7 +26,7 @@ const TestStepsView: React.FC<TabValueProps> = ({ tabValue, setTabValue }) => {
         {/* <TabsTrigger value="selenium-log">Selenium logs</TabsTrigger> */}
       </TabsList>
       <Tabs.Content value="test-details">
-        <TestDetailsView testStepsData={testSteps} tracePresent={traceView} />
+        <TestDetailsView testStepsData={testSteps} $tracePresent={traceView} />
       </Tabs.Content>
       <Tabs.Content value="http-log">
         <LogView log={httpLog} />

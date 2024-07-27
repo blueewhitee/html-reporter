@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
 type Props = {
-  highlight: boolean;
+  $highlight: boolean;
 };
 
 type WrapperProps = {
-  shrink?: boolean;
+  $shrink?: boolean;
 };
 
 export const Wrapper = styled.div<WrapperProps>`
@@ -18,7 +18,7 @@ export const Wrapper = styled.div<WrapperProps>`
   overflow: auto;
 
   ${(props) =>
-    props.shrink &&
+    props.$shrink &&
     css`
       overflow: auto;
     `}
@@ -55,7 +55,7 @@ export const Line = styled.div<Props>`
   display: table-row;
 
   ${(props) =>
-    props.highlight &&
+    props.$highlight &&
     css`
       background-color: var(--color-red-10);
       color: var(--color-red-60);

@@ -8,7 +8,7 @@ describe('Nightwatchjs.org Demo', function () {
       .assert.visible('.hero__heading')
       .assert.visible('.hero__action-copy-command-button')
       .click('.hero__action-copy-command-button')
-      .assert.textContains('.hero__action-copy-command-button.active', 'Copied!');
+      .assert.textContains('.hero__action-copy-command-button.$active', 'Copied!');
   });
 
   after((browser) => browser.end());

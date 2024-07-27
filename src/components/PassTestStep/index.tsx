@@ -4,10 +4,10 @@ import { ElapsedTime, Wrapper, Text, PassedIcon } from './style';
 
 type TestStepProps = {
   testStepKey: number;
-  tracePresent: boolean;
+  $tracePresent: boolean;
   time: number;
-  active: boolean;
-  setActiveTestStep: React.Dispatch<React.SetStateAction<number | undefined>>;
+  $active: boolean;
+  set$activeTestStep: React.Dispatch<React.SetStateAction<number | undefined>>;
   children: React.ReactNode;
   traceData: ITrace['domSnapshot'];
   setTrace: React.Dispatch<
@@ -23,20 +23,20 @@ type TestStepProps = {
 
 const PassTestStep: React.FC<TestStepProps> = ({
   testStepKey,
-  active,
-  setActiveTestStep,
+  $active,
+  set$activeTestStep,
   time,
   children,
-  tracePresent,
+  $tracePresent,
   traceData: { snapshotUrl, snapshotFilePath },
   setTrace
 }) => {
   return (
     <Wrapper
-      tracePresent={tracePresent}
-      active={active}
+      $tracePresent={$tracePresent}
+      $active={$active}
       onClick={() => {
-        setActiveTestStep(testStepKey);
+        set$activeTestStep(testStepKey);
         setTrace(
           snapshotFilePath
             ? {

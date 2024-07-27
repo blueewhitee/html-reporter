@@ -24,9 +24,9 @@ const ProgressLine: React.FC<Props> = ({ visualPartition }) => {
   }, [visualPartition]);
 
   return (
-    <Wrapper backgroundColor={'--color-grey-10'}>
+    <Wrapper $backgroundColor={'--color-grey-10'}>
       {visualPartition.map(({ color }, index) => (
-        <Graph key={index} width={widths[index]} backgroundColor={color} />
+        <Graph key={index} width={widths[index]} $backgroundColor={color} />
       ))}
     </Wrapper>
   );

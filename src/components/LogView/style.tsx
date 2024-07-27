@@ -55,7 +55,7 @@ const Text = styled.span`
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-16);
-  flex-shrink: 0;
+  flex-$shrink: 0;
 `;
 
 export const Request = styled(Text)`
@@ -75,7 +75,7 @@ export const Time = styled.div`
   border-radius: var(--border-radius-3);
   padding: var(--padding-4);
   background-color: var(--color-grey-50);
-  flex-shrink: 0;
+  flex-$shrink: 0;
   margin-right: 15px;
 `;
 

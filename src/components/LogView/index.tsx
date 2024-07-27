@@ -1,4 +1,4 @@
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import $highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/nightOwl';
 import React, { Fragment } from 'react';
 import {
@@ -47,7 +47,7 @@ const LogView: React.FC<LogViewProps> = ({ log }) => {
                     </RequestText>
                   </RequestBlock>
                   <ResponseBlock>
-                    <Highlight
+                    <$highlight
                       {...defaultProps}
                       theme={theme}
                       code={String(response.replaceAll('&#39;', "'"))}
@@ -66,7 +66,7 @@ const LogView: React.FC<LogViewProps> = ({ log }) => {
                           ))}
                         </Pre>
                       )}
-                    </Highlight>
+                    </$highlight>
                   </ResponseBlock>
                 </Fragment>
               )

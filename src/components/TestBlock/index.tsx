@@ -7,7 +7,7 @@ import { statusIcon } from './utils';
 type TestBlockProps = {
   children: React.ReactNode;
   status: string;
-  highlightBlock: boolean;
+  $highlightBlock: boolean;
   fileKey: string;
   testKey: string;
   setTestId: React.Dispatch<React.SetStateAction<string>>;
@@ -18,7 +18,7 @@ type TestBlockProps = {
 const TestBlock: React.FC<TestBlockProps> = ({
   children,
   status,
-  highlightBlock,
+  $highlightBlock,
   fileKey,
   testKey,
   setTestId,
@@ -27,7 +27,7 @@ const TestBlock: React.FC<TestBlockProps> = ({
 }) => {
   return (
     <Wrapper
-      highlight={highlightBlock}
+      $highlight={$highlightBlock}
       clickable={status !== 'skip'}
       onClick={() => {
         if (status !== 'skip') {
@@ -38,7 +38,7 @@ const TestBlock: React.FC<TestBlockProps> = ({
       }}
     >
       <Left>{statusIcon(status as Status)}</Left>
-      <Text fontSize={14} lineHight={20} color="grey-100" transformText>
+      <Text fontSize={14} $lineHight={20} color="grey-100" $transformText>
         {children}
       </Text>
     </Wrapper>

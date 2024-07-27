@@ -18,7 +18,7 @@ const VrtReporterComponent: React.FC = () => {
         <Header />
         <Wrapper>
           <TextWrapper>
-            <Text fontSize={14} lineHight={20} color="grey-100">
+            <Text fontSize={14} $lineHight={20} color="grey-100">
               {`${changes} changes detected`}
             </Text>
           </TextWrapper>

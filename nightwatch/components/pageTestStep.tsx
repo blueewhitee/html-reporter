@@ -11,10 +11,10 @@ export const PassTestStepComponent = () => (
     <GlobalStyles />
     <PassTestStep
       testStepKey={1}
-      active={true}
-      setActiveTestStep={(key) => console.log(`Active test step key set to: ${key}`)}
+      $active={true}
+      set$activeTestStep={(key) => console.log(`$active test step key set to: ${key}`)}
       time={500}
-      tracePresent={true}
+      $tracePresent={true}
       traceData={{ snapshotUrl: 'example.com', snapshotFilePath: 'examplePath' }}
       setTrace={() => {}}
     >

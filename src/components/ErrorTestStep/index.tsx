@@ -8,8 +8,8 @@ import { ElapsedTime, FailedIcon, FailedStepWrapper, Text, Wrapper } from './sty
 export type TestStepProps = {
   testStepKey: number;
   time: number;
-  active: boolean;
-  setActiveTestStep: React.Dispatch<React.SetStateAction<number | undefined>>;
+  $active: boolean;
+  set$activeTestStep: React.Dispatch<React.SetStateAction<number | undefined>>;
   children: React.ReactNode;
   errorName: string;
   shortMessage: string[];
@@ -29,29 +29,29 @@ export type TestStepProps = {
       | undefined
     >
   >;
-  tracePresent?: boolean;
+  $tracePresent?: boolean;
 };
 
 const ErrorTestStep: React.FC<TestStepProps> = ({
   testStepKey,
   time,
-  active,
-  setActiveTestStep,
+  $active,
+  set$activeTestStep,
   children,
   errorName,
   shortMessage,
   screenshot,
   stacktrace,
-  tracePresent,
+  $tracePresent,
   traceData: { snapshotUrl, snapshotFilePath },
   setTrace
 }) => {
   return (
     <Wrapper
-      tracePresent={tracePresent}
-      active={active}
+      $tracePresent={$tracePresent}
+      $active={$active}
       onClick={() => {
-        setActiveTestStep(testStepKey);
+        set$activeTestStep(testStepKey);
         setTrace(
           snapshotFilePath
             ? {
@@ -74,7 +74,7 @@ const ErrorTestStep: React.FC<TestStepProps> = ({
           shortMessage,
           stackTrace: stacktrace
         }}
-        tracePresent={tracePresent}
+        $tracePresent={$tracePresent}
       />
       {screenshot && <Screenshot src={screenshot} alt={shortMessage.join('')} />}
     </Wrapper>

@@ -17,11 +17,11 @@ export const AccordionTrigger = React.forwardRef<HTMLButtonElement, AccordionTri
         <AccordionHeaderContent>
           {status && statusIcon(status)}
           <Text
-            lineHight={20}
+            $lineHight={20}
             fontSize={14}
             color="grey-100"
             fontWeight="--font-weight-bold"
-            transformText
+            $transformText
           >
             {children}
           </Text>

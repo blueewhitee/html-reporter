@@ -33,7 +33,7 @@ const EnvironmentMetadata: React.FC<MetaDataProps> = ({
   return (
     <Wrapper>
       {device && (
-        <ChipWithIcon icon={<DesktopWindowsOutlined />} transformText>
+        <ChipWithIcon icon={<DesktopWindowsOutlined />} $transformText>
           {device}
         </ChipWithIcon>
       )}
@@ -41,7 +41,7 @@ const EnvironmentMetadata: React.FC<MetaDataProps> = ({
         <ChipWithIcon
           title={browserVersion}
           icon={<Browser name={browserName} />}
-          transformText>{`${browserName} ${majorBrowserVersion ?? ''}`}</ChipWithIcon>
+          $transformText>{`${browserName} ${majorBrowserVersion ?? ''}`}</ChipWithIcon>
       )}
       {operatingSystemName && (
         <ChipWithIcon icon={<OperatingSystem name={operatingSystemName} />}>{`${
@@ -57,7 +57,7 @@ const EnvironmentMetadata: React.FC<MetaDataProps> = ({
         <Timer time={time} color="--color-grey-100" fontSize="--font-size-12" gap={4} />
       )}
       {diff && (
-        <Text fontSize={12} lineHight={20} color="grey-100" transformText>
+        <Text fontSize={12} $lineHight={20} color="grey-100" $transformText>
           {diff}% diff
         </Text>
       )}

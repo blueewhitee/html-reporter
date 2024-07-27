@@ -49,11 +49,11 @@ const SpecMetaData: React.FC = () => {
         <EnvironmentAndSpecName>
           {envName && filename && (
             <>
-              <Text fontSize={12} lineHight={20} color="grey-100">
+              <Text fontSize={12} $lineHight={20} color="grey-100">
                 {envName}
               </Text>
               <Separator height={12} borderColor="--color-grey-100" />
-              <Text fontSize={12} lineHight={20} color="grey-100">
+              <Text fontSize={12} $lineHight={20} color="grey-100">
                 {`Spec: ${filename}`}
               </Text>
             </>

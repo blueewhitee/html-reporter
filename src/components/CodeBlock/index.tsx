@@ -1,5 +1,5 @@
 import React from 'react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import $highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/github';
 import { Segment } from '../../icons';
 import Tooltip from '../Tooltip';
@@ -12,7 +12,7 @@ type CodeBlockProps = {
   line_number: number;
   codeSnippet: CodeSnippet[];
   file_path: string;
-  tracePresent?: boolean;
+  $tracePresent?: boolean;
 };
 
 const CodeBlock: React.FC<CodeBlockProps> = ({
@@ -20,12 +20,12 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   line_number,
   codeSnippet,
   file_path,
-  tracePresent
+  $tracePresent
 }) => {
   const { code, line: lineNumbers } = destructCodeBlock(codeSnippet);
 
   return (
-    <Wrapper shrink={tracePresent}>
+    <Wrapper $shrink={$tracePresent}>
       <Filename>
         <Segment />
         <Tooltip content="Open in IDE">
@@ -35,12 +35,12 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         </Tooltip>
       </Filename>
       <CodeWrapper>
-        <Highlight {...defaultProps} theme={theme} code={code.join('\n')} language="jsx">
+        <$highlight {...defaultProps} theme={theme} code={code.join('\n')} language="jsx">
           {({ className, tokens, getLineProps, getTokenProps }) => (
             <Pre className={className}>
               {tokens.map((line, i) => (
                 <Line
-                  highlight={lineNumbers[i] === line_number}
+                  $highlight={lineNumbers[i] === line_number}
                   key={i}
                   {...getLineProps({ line, key: i })}
                 >
@@ -54,7 +54,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
               ))}
             </Pre>
           )}
-        </Highlight>
+        </$highlight>
       </CodeWrapper>
     </Wrapper>
   );

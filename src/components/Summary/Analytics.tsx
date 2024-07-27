@@ -44,7 +44,7 @@ const Analytics: React.FC = () => {
             <TotalSpecCountWrapper>
               <TestCount>{total}</TestCount>
               <Spacer size={6} />
-              <Text fontSize={16} lineHight={24}>
+              <Text fontSize={16} $lineHight={24}>
                 Tests
               </Text>
             </TotalSpecCountWrapper>
@@ -70,21 +70,21 @@ const Analytics: React.FC = () => {
             <MetricWrapper>
               <MetricCount>{passed}</MetricCount>
               <Spacer size={4} />
-              <Text fontSize={12} lineHight={20}>
+              <Text fontSize={12} $lineHight={20}>
                 Passed
               </Text>
             </MetricWrapper>
             <MetricWrapper>
               <MetricCount>{failed}</MetricCount>
               <Spacer size={4} />
-              <Text fontSize={12} lineHight={20}>
+              <Text fontSize={12} $lineHight={20}>
                 Failed
               </Text>
             </MetricWrapper>
             <MetricWrapper>
               <MetricCount>{skipped}</MetricCount>
               <Spacer size={4} />
-              <Text fontSize={12} lineHight={20}>
+              <Text fontSize={12} $lineHight={20}>
                 Skipped
               </Text>
             </MetricWrapper>
